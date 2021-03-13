@@ -21,7 +21,7 @@ public class LockerAccessController {
     public ResponseEntity<ResponseBodyDTO<String>> postUnlock(@PathVariable(name = "uuid") final String uuid) {
 		
 		GpioController gpio = GpioFactory.getInstance();
-		GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "locker", PinState.HIGH);
+		GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "locker", PinState.LOW);
 		
 		pin.toggle();
 		
